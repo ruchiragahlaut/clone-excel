@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- menu -->
+    <!--menu-container is responsible for all blue part in UI-->
+    <div class="menu-container">
+        <!--In formatting we have two subgroups one is resposible for font
+        and other one is for BUI-->
+        <div class="formatting-container">
+            <div class="subgroup">
+                <!--select is inline block element-->
+                <select id="font-family" class="font-family">
+                    <option value="Arial">Font-1</option>
+                    <option value="Cambria">Font-2</option>
+                    <option value="Georgia">Font-3</option>
+                    <option value="monospace">Font-4</option>
+                    <option value="sans-serif">Font-5</option>
+                    <option value="fantasy">Font-6</option>
+                </select>
+                <div class="BUI_container">
+                    <input type="button" value="B" class="bold">
+                    <input type="button" value="I" class="italic ">
+                    <input type="button" value="U" class="underline ">
+                </div>
+            </div>
+            <div class="subgroup">
+                <select id="font-size" class="font-size">
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="16">16</option>
+                    <option value="20">20</option>
+                    <option value="32">32</option>
+                </select>
+                <div class="color-container">
+                   <!-- input type = color (gives you the color bar)-->
+                    <input type="color" id="color">
+                    <input type="color" id="bg-color">
+                </div>
+            </div>
+        </div>
+        <div class="alignment-container">
+            <input type="button" value="L" class="left">
+            <input type="button" value="C" class="center">
+            <input type="button" value="R" class="right">
+        </div>
+        <div class="bui-container">
+            <i class="far fa-envelope-open open "></i>
+            <i class="fas fa-plus-circle new "></i>
+            <i class="fas fa-file-download download "></i>
+        </div>
+    </div>
+
+    <!--formula-->
+    <div class="formula-container">
+        <input type="text" class="address-box" readonly>
+        <div class="seperator">:</div>
+        <input type="text" class="formula-box">
+    </div>
+   
+    <!-- grid -->
+    <div class="grid_container">
+        <div class="top-left-block">
+        </div>
+        <div class="top-row">
+        </div>
+        <div class="left-col">
+        </div>
+        <div class="grid"></div>
+    </div>
+
+
+
+    <!-- sheets -->
+    <div class="sheets">
+        <div class="add-sheet_container">
+            <i class="fas fa-plus icon"></i>
+        </div>
+        <div class="sheets-list">
+            <div class="sheet active-sheet" sheetIdx="1"> Sheet 1</div>
+
+        </div>
+    </div>
+
+
+    <!--all the varibales are accessible of init file in script file-->
+    <script src="init.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src ="download.js" defer></script>
+</body>
+
+</html>
+
+
+<!--Everything is about formula -->
+
+<!--Constraints-->
+<!--
+    Rows 
+    Columns
+    Formula -> Formula bar
+        Every token should have blur 
+-->
+
+<!--
+    Value - Value (manually putting value on that cell)
+    Formula - Value (putting value by calculating formula)
+    value - Formula (first we put manually value and then we set some formula on that cell)
+    formula - formula (formula updation)
+-->
+
+<!-- 
+    formula can be set and update
+    cells operations : value to value or formula to value
+    formula bar : formula updations
+-->
+
+<!--
+    when we calculate anything for any cell then BLUR event called on the formula bar
+    What is blur event ?
+    when we click on somewhere else then on previos click blur event will call
+-->
+<!--
+    when something is not correct in Address bar the you can pop an alert
+-->
+<!--
+    cycle detection - problem in formula bar
+    isformula(valid)
+
+    for ex - 
+    a1 = 10
+    b1 = 2*a1
+    c1 = 2*a1
+
+    now if i put a1 = 2*c1
+    now this cycle here you can put cycle detection problem here graph
+    evaluate -- try to implement with stack 
+-->
+<!--
+    if you want to download an excel file u need to search it
+    xlxs-npm
+-->
+
